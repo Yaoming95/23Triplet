@@ -36,7 +36,7 @@ DEFAULT_MAX_SOURCE_POSITIONS = 1024
 DEFAULT_MAX_TARGET_POSITIONS = 1024
 
 
-@register_model("emmt_transformer_SGe")
+@register_model("emmt_transformer")
 class TransformerModel(FairseqEncoderDecoderModel):
     """
     Transformer model from `"Attention Is All You Need" (Vaswani, et al, 2017)
@@ -1139,7 +1139,7 @@ def Linear(in_features, out_features, bias=True):
     return m
 
 
-@register_model_architecture("emmt_transformer_SGe", "emmt_transformer_SGe")
+@register_model_architecture("emmt_transformer", "emmt_transformer")
 def base_architecture(args):
     args.encoder_embed_path = getattr(args, "encoder_embed_path", None)
     args.encoder_embed_dim = getattr(args, "encoder_embed_dim", 512)
@@ -1184,8 +1184,8 @@ def base_architecture(args):
     args.tie_adaptive_weights = getattr(args, "tie_adaptive_weights", False)
 
 
-@register_model_architecture("emmt_transformer_SGe", "emmt_transformer_SGe_top6")
-def emmt_transformer_SGe_top6(args):
+@register_model_architecture("emmt_transformer", "emmt_transformer_top6")
+def emmt_transformer_top6(args):
     args.encoder_embed_dim = getattr(args, "encoder_embed_dim", 256)
     args.encoder_ffn_embed_dim = getattr(args, "encoder_ffn_embed_dim", 512)
     args.encoder_attention_heads = getattr(args, "encoder_attention_heads", 8)
@@ -1201,8 +1201,8 @@ def emmt_transformer_SGe_top6(args):
     base_architecture(args)
 
 
-@register_model_architecture("emmt_transformer_SGe", "emmt_transformer_SGe_top")
-def emmt_transformer_SGe_top(args):
+@register_model_architecture("emmt_transformer", "emmt_transformer_top")
+def emmt_transformer_top(args):
     args.encoder_embed_dim = getattr(args, "encoder_embed_dim", 128)
     args.encoder_ffn_embed_dim = getattr(args, "encoder_ffn_embed_dim", 256)
     args.encoder_attention_heads = getattr(args, "encoder_attention_heads", 4)

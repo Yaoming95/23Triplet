@@ -20,7 +20,8 @@ use `data_preprocessor.py` to preprocess data into fairseq/CLIP emb form.
 
 ### 3. model arch
 
-see `fairseq` dir
+see `fairseq` dir. 
+The main arch is in `EMMT_transformer.py`
 
 
 ### Citation
